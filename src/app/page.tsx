@@ -1,7 +1,8 @@
+import MainLayout from "@/components/MainLayout";
 import React from "react";
 
 const Home = () => {
-  return <div className="w-full min-h-screen bg-background">Home</div>;
+  return <MainLayout>Hello</MainLayout>;
 };
 
 export default Home;
