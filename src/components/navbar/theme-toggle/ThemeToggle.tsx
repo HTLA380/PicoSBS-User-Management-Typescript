@@ -37,7 +37,7 @@ const ThemeToggle = () => {
     <Menu.Items className="absolute right-0 mt-2 w-36 p-2 origin-top-right rounded-md bg-popover shadow-md">
       {themeData.map((data) => {
         return (
-          <Menu.Item>
+          <Menu.Item key={data.name}>
             <button
               onClick={() => handleThemeChange(data.name)}
               key={data.name}

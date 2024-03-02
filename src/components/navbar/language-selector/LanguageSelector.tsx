@@ -30,7 +30,7 @@ const LanguageSelector = () => {
     <Menu.Items className="absolute right-0 mt-2 w-36 p-2 origin-top-right rounded-md bg-popover shadow-md">
       {languageData.map((data) => {
         return (
-          <Menu.Item>
+          <Menu.Item key={data.name}>
             <button
               onClick={() => setSelectedLanguage(data.name)}
               key={data.name}
