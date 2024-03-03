@@ -25,7 +25,7 @@ const SelectDropDownMenu: React.FC<SelectDropDownMenuInterface> = ({
   options = [],
 }) => {
   const handleChange = (newValue: string) => {
-    if (setSelected) setSelected(newValue);
+    setSelected(newValue);
   };
 
   return (

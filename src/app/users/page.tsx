@@ -6,6 +6,7 @@ import { UsersListInfos } from "../../../constants/data";
 import { UserFilterProvider } from "@/context/UserFilter";
 import TableFilter from "@/containers/user-management/users-list/user-table-filter";
 import CustomTable from "@/containers/user-management/users-list/user-table";
+import TablePagination from "@/containers/user-management/users-list/user-table-pagination";
 
 // =================================================================
 
@@ -19,6 +20,9 @@ const Users = () => {
           </div>
           <div className="my-6">
             <CustomTable />
+          </div>
+          <div>
+            <TablePagination />
           </div>
         </div>
       </MainLayout>
