@@ -41,7 +41,7 @@ const Sidebar: React.FC = () => {
   return (
     <div
       className={`min-h-[100vh] bg-secondary fixed top-0 left-0 px-2 pt-20 ${
-        isOpen ? "w-[17rem]" : "w-20"
+        isOpen ? "w-[17rem]" : "w-16"
       } duration-500 relative hover:w-[17rem] group`}>
       <div className="flex flex-col gap-1 overflow-hidden">
         {sidebarData.map((menu: MenuItem, index: number) =>
