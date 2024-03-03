@@ -240,7 +240,7 @@ export const UsersListInfos = [
     },
     username: "aungnyinyihtwe",
     role: "developer",
-    status: "active",
+    status: "inactive",
   },
   {
     id: 8,
@@ -280,7 +280,7 @@ export const UsersListInfos = [
     },
     username: "chitthaeko",
     role: "developer",
-    status: "active",
+    status: "inactive",
   },
   {
     id: 12,
@@ -300,7 +300,7 @@ export const UsersListInfos = [
     },
     username: "hlaingkoko",
     role: "trial",
-    status: "active",
+    status: "inactive",
   },
   {
     id: 14,
@@ -349,7 +349,7 @@ export const UsersListInfos = [
     },
     username: "representative",
     role: "developer",
-    status: "active",
+    status: "inactive",
   },
   {
     id: 19,

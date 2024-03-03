@@ -1,10 +1,11 @@
 "use client";
 
-import React, { Fragment, useState } from "react";
+import React, { useState, useEffect } from "react";
+
 import { IoMdSunny } from "react-icons/io";
 import { BsFillMoonStarsFill } from "react-icons/bs";
 import { FaDesktop } from "react-icons/fa";
-import { Menu, Transition } from "@headlessui/react";
+import { Menu } from "@headlessui/react";
 
 interface Theme {
   name: string;
@@ -27,7 +28,17 @@ const themeData: Theme[] = [
 ];
 
 const ThemeToggle = () => {
-  const [theme, setTheme] = useState("light");
+  const [theme, setTheme] = useState(() => {
+    // Initialize theme from local storage or default to light
+    return localStorage.getItem("theme") || "light";
+  });
+
+  useEffect(() => {
+    // Save theme preference to local storage
+    localStorage.setItem("theme", theme);
+    // Update HTML class based on selected theme
+    document.documentElement.className = `${theme}`;
+  }, [theme]);
 
   const handleThemeChange = (selectedTheme: string) => {
     setTheme(selectedTheme);
