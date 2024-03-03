@@ -1,10 +1,10 @@
 import React from "react";
 
 import MainLayout from "@/components/MainLayout";
-import TableFilter from "@/containers/user-management/users-list/table-filter";
 
 import { UsersListInfos } from "../../../constants/data";
 import { UserFilterProvider } from "@/context/UserFilter";
+import TableFilter from "@/containers/user-management/users-list/user-table-filter";
 
 // =================================================================
 
