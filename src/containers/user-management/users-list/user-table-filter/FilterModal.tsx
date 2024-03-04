@@ -45,6 +45,14 @@ const FilterModal = () => {
     resetFilter();
   };
 
+  const handleRoleSelect = (state: string | null) => {
+    setRole(state);
+  };
+
+  const handleStatusSelect = (state: string | null) => {
+    setStatus(state);
+  };
+
   return (
     <div>
       <Menu as="div" className="relative inline-block text-left">
@@ -65,7 +73,7 @@ const FilterModal = () => {
                 <SelectDropDownMenu
                   removeAble
                   selected={role}
-                  setSelected={setRole}
+                  handleChange={handleRoleSelect}
                   placeholder={"Select option"}
                   options={roleOptionData}
                 />
@@ -76,7 +84,7 @@ const FilterModal = () => {
                 <SelectDropDownMenu
                   removeAble
                   selected={status}
-                  setSelected={setStatus}
+                  handleChange={handleStatusSelect}
                   placeholder={"Select option"}
                   options={activeStatusOptionData}
                 />

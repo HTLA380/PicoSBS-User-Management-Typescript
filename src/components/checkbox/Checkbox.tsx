@@ -16,7 +16,7 @@ const Checkbox: React.FC<CheckBoxProps> = ({ checked, onChange }) => (
       />
       <div
         className={`pointer-events-none w-full h-full absolute top-0 left-0 flex items-center justify-center text-xs text-white ${
-          checked ? "bg-[#3e97ff] border-[#3e97ff]" : "bg-muted"
+          checked ? "bg-primary border-border" : "bg-accent"
         }`}>
         {checked ? <FaCheck /> : null}
       </div>

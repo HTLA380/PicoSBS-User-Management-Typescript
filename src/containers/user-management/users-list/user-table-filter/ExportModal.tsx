@@ -77,6 +77,14 @@ const ExportModal = () => {
     }, 1500);
   };
 
+  const handleRoleSelect = (state: string | null) => {
+    setSelectedRole(state);
+  };
+
+  const handleFormatSelect = (state: string | null) => {
+    setSelectedFormat(state);
+  };
+
   return (
     <Modal
       button={mainModalButton}
@@ -93,7 +101,7 @@ const ExportModal = () => {
               placeholder={"Select a role"}
               options={roleOptionData}
               selected={selectedRole}
-              setSelected={setSelectedRole}
+              handleChange={handleRoleSelect}
             />
           </div>
           <div className="mt-8">
@@ -104,7 +112,7 @@ const ExportModal = () => {
               placeholder="Select a format"
               selected={selectedFormat}
               options={formatOptionData}
-              setSelected={setSelectedFormat}
+              handleChange={handleFormatSelect}
             />
             {isEmptyField && (
               <p className="m-2 text-xs text-destructive">

@@ -1,13 +1,19 @@
 "use client";
 
-import React, { createContext, useContext, useState, ReactNode } from "react";
+import React, {
+  createContext,
+  useContext,
+  useState,
+  ReactNode,
+  useEffect,
+} from "react";
 
 interface User {
   id: number;
   user: {
     name: string;
     email?: string;
-    imgSrc?: string;
+    imgUrl?: string;
   };
   username: string;
   role: string;
@@ -28,6 +34,7 @@ interface UserFilterContextType {
   selectAllChecked: boolean;
   setSelectAllChecked: React.Dispatch<React.SetStateAction<boolean>>;
 
+  addUser: (newUser: User) => void;
   filterByName: (searchText: string) => void;
   filterByRole: (params: { role?: string; status?: string }) => void;
   resetFilter: () => void;
@@ -50,6 +57,18 @@ export const UserFilterProvider: React.FC<{
   const [currentPage, setCurrentPage] = useState<number>(1);
   const [selectedUsersId, setSelectedUsersId] = useState<number[]>([]);
   const [selectAllChecked, setSelectAllChecked] = useState<boolean>(false);
+
+  useEffect(() => {
+    // Update filteredUsers when initialData changes
+    setUsers(initialData);
+    setFilteredUsers(initialData);
+  }, [initialData]);
+
+  const addUser = (newUser: User) => {
+    // Add the new user to the users array
+    setUsers((prevUsers) => [...prevUsers, newUser]);
+    // Additional logic for filtering, pagination, etc. if needed
+  };
 
   const filterByName = (searchText: string) => {
     const filteredData = users.filter((data) =>
@@ -122,6 +141,7 @@ export const UserFilterProvider: React.FC<{
         selectAllChecked,
         setSelectAllChecked,
 
+        addUser,
         filterByName,
         filterByRole,
         resetFilter,

@@ -8,9 +8,10 @@ import { Combobox } from "@headlessui/react";
 
 interface SelectDropDownMenuInterface {
   selected: string | null;
-  setSelected: React.Dispatch<SetStateAction<string | null>>;
+  handleChange: (state: string | null) => void;
   removeAble?: boolean;
   placeholder?: string;
+  className?: string;
   options: {
     id: string | number;
     name: string;
@@ -19,15 +20,12 @@ interface SelectDropDownMenuInterface {
 
 const SelectDropDownMenu: React.FC<SelectDropDownMenuInterface> = ({
   selected,
-  setSelected,
+  handleChange,
   removeAble = false,
   placeholder = "Select an option",
+  className = "",
   options = [],
 }) => {
-  const handleChange = (newValue: string) => {
-    setSelected(newValue);
-  };
-
   return (
     <div className="w-full">
       <Combobox value={selected || ""} onChange={handleChange}>
@@ -35,7 +33,7 @@ const SelectDropDownMenu: React.FC<SelectDropDownMenuInterface> = ({
           <Combobox.Button
             className={`flex items-center justify-between w-full px-4 py-3 text-sm font-semibold text-left rounded-md cursor-pointer text-accent-foreground ${
               selected ? "bg-accent" : "bg-muted"
-            }`}>
+            } ${className}`}>
             <div
               className={`${
                 selected ? "text-accent-foreground" : "text-muted-foreground"
@@ -46,7 +44,7 @@ const SelectDropDownMenu: React.FC<SelectDropDownMenuInterface> = ({
               {removeAble && selected && (
                 <span
                   className="px-1 hover:text-primary"
-                  onClick={() => setSelected(null)}>
+                  onClick={() => handleChange(null)}>
                   <FaXmark />
                 </span>
               )}

@@ -200,7 +200,19 @@ export const OrdersData = [
   },
 ];
 
-export const UsersListInfos = [
+interface User {
+  id: number;
+  user: {
+    name: string;
+    email?: string;
+    imgUrl?: string;
+  };
+  username: string;
+  role: string;
+  status: string;
+}
+
+export const UsersListInfos: User[] = [
   {
     id: 1,
     user: {
