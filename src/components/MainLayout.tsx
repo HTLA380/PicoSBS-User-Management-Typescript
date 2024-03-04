@@ -21,7 +21,7 @@ const MainLayout: React.FC<MainLayoutInterface> = ({ children }) => {
 
       <main className="relative flex min-h-screen font-medium bg-background text-foreground">
         <Sidebar />
-        <div className="relative flex-1 w-full pb-5 overflow-auto">
+        <div className="relative flex-1 w-full pb-5 overflow-auto pl-16">
           <NavBar />
           <div className="flex flex-col justify-between h-[90%] px-4">
             <div>{children}</div>
