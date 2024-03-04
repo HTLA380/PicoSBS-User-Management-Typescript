@@ -13,7 +13,7 @@ const ActionDropDownMenu = () => {
         </Menu.Button>
 
         <Transition as={Fragment} {...slideInUpTransition}>
-          <Menu.Items className="w-36 bg-card drop-shadow rounded-lg gap-1 flex items-start py-3 px-2 flex-col absolute right-0 -translate-x-full mt-1 z-20">
+          <Menu.Items className="w-36 bg-card drop-shadow rounded-lg gap-1 flex items-start py-3 px-2 flex-col absolute -right-20 lg:-right-10 xl:right-0 -translate-x-full mt-1 z-20 ">
             <Menu.Item>
               <button className="w-full text-card-foreground hover:bg-primary-light hover:text-primary text-start rounded-lg p-2">
                 View
