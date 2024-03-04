@@ -44,7 +44,7 @@ const ExportModal = () => {
   const mainModalButton = (
     <button
       onClick={() => setShowMainModal(true)}
-      className="flex items-center gap-2 px-6 py-3 text-sm rounded-md text-primary bg-primary-light hover:bg-primary hover:text-primary-foreground">
+      className="flex items-center gap-2 px-6 py-3 text-xs md:text-sm rounded-md text-primary bg-primary-light hover:bg-primary hover:text-primary-foreground">
       <PiExportBold size={15} />
       Export
     </button>
@@ -53,8 +53,8 @@ const ExportModal = () => {
   const closeModal = () => setShowMainModal(false);
 
   const modalHeader = (
-    <div className="flex items-center justify-between px-6 pt-6 pb-8 border-b border-b-border">
-      <h5 className="text-xl font-semibold">Export Users</h5>
+    <div className="flex items-center justify-between p-4 md:px-6 md:pt-6 md:pb-8 border-b border-b-border">
+      <h5 className="text-lg md:text-xl font-semibold">Export Users</h5>
       <button
         className="text-accent-foreground hover:text-primary"
         onClick={closeModal}>
@@ -94,7 +94,7 @@ const ExportModal = () => {
       <div className="w-full max-w-[40.625rem] mx-auto bg-secondary rounded-lg text-foreground">
         {modalHeader}
 
-        <div className="p-5 mx-10 my-5">
+        <div className="p-5 md:mx-10 my-5">
           <div>
             <h5 className="mb-1.5 text-sm">Select Roles:</h5>
             <SelectDropDownMenu
@@ -171,19 +171,19 @@ const RenderDiscardButtonWithAlert: React.FC<
           <>
             <button
               onClick={closeAlertAndModal}
-              className="px-6 py-3 mr-4 text-sm font-semibold rounded-lg text-primary-foreground bg-primary hover:brightness-90">
+              className="px-6 py-3 mr-4 text-xs md:text-sm font-semibold rounded-lg text-primary-foreground bg-primary hover:brightness-90">
               Yes, cancel it!
             </button>
             <button
               onClick={showDangerAlert}
-              className="px-6 py-3 text-sm font-medium rounded-lg text-foreground hover:bg-accent hover:text-accent-foreground">
+              className="px-6 py-3 text-xs md:text-sm font-medium rounded-lg text-foreground hover:bg-accent hover:text-accent-foreground">
               No return
             </button>
           </>
         ) : (
           <button
             onClick={closeAlert}
-            className="px-6 py-3 text-sm font-semibold rounded-md text-primary-foreground bg-primary hover:brightness-90">
+            className="px-6 py-3 text-xs md:text-sm font-semibold rounded-md text-primary-foreground bg-primary hover:brightness-90">
             Ok, got it!
           </button>
         )
@@ -195,7 +195,7 @@ const RenderDiscardButtonWithAlert: React.FC<
     <>
       <button
         onClick={showWarningAlert}
-        className="px-5 py-3 text-sm font-medium rounded-md text-accent-foreground bg-accent hover:brightness-95">
+        className="px-5 py-3 text-xs md:text-sm font-medium rounded-md text-accent-foreground bg-accent hover:brightness-95">
         Discard
       </button>
       {renderAlert("warning")}
@@ -239,13 +239,13 @@ const RenderSubmitButtonWithAlert: React.FC<
         type === "success" ? (
           <button
             onClick={closeAlertAndModal}
-            className="px-6 py-3 mr-4 text-sm font-semibold rounded-md text-primary-foreground bg-primary hover:brightness-90">
+            className="px-6 py-3 mr-4 text-xs md:text-sm font-semibold rounded-md text-primary-foreground bg-primary hover:brightness-90">
             Ok, got it!
           </button>
         ) : (
           <button
             onClick={closeAlert}
-            className="px-6 py-3 text-sm font-semibold rounded-md text-primary-foreground bg-primary hover:brightness-90">
+            className="px-6 py-3 text-xs md:text-sm font-semibold rounded-md text-primary-foreground bg-primary hover:brightness-90">
             Ok, got it!
           </button>
         )

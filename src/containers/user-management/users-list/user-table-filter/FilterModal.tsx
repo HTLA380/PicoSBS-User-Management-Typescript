@@ -56,13 +56,13 @@ const FilterModal = () => {
   return (
     <div>
       <Menu as="div" className="relative inline-block text-left">
-        <Menu.Button className="inline-flex items-center justify-center w-full gap-2 px-5 py-3 rounded-md text-primary bg-primary-light hover:bg-primary hover:text-primary-foreground focus:outline-none focus-visible:ring-2 focus-visible:ring-primary-foreground focus-visible:ring-opacity-75">
+        <Menu.Button className="text-xs md:text-sm inline-flex items-center justify-center w-full gap-2 px-5 py-3 rounded-md text-primary bg-primary-light hover:bg-primary hover:text-primary-foreground focus:outline-none focus-visible:ring-2 focus-visible:ring-primary-foreground focus-visible:ring-opacity-75">
           <FaFilter />
           Filter
         </Menu.Button>
 
         <Transition as={Fragment} {...slideInUpTransition}>
-          <Menu.Items className="absolute right-0 z-20 mt-1 origin-top-right rounded-md shadow-xl bg-card w-[340px]">
+          <Menu.Items className="absolute right-5 translate-x-1/2 md:translate-x-0 z-20 mt-1 origin-top-right rounded-md shadow-xl bg-card w-[21.25rem]">
             <div className="w-full px-4 py-3 text-sm font-semibold border-b border-b-border">
               <p>Filter Options</p>
             </div>

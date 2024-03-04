@@ -16,8 +16,8 @@ const PageTitle = () => {
 
   return (
     <div>
-      <h3 className="text-lg font-semibold">{title || ""}</h3>
-      <p className="text-[0.8125rem] font-medium capitalize">
+      <h3 className="text-base md:text-lg font-semibold">{title || ""}</h3>
+      <p className="text-xs md:text-sm font-medium capitalize">
         <span className="text-muted-foreground">
           {subtitlePathname || ""} /{" "}
         </span>

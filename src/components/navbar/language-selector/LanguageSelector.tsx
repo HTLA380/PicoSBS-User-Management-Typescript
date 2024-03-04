@@ -56,7 +56,7 @@ const LanguageSelector = () => {
   return (
     <div className="relative">
       <Menu>
-        <Menu.Button className="flex items-center h-full gap-2 w-24 justify-center text-xs font-medium rounded-sm shadow-sm text-secondary-foreground bg-secondary">
+        <Menu.Button className="flex items-center py-3 gap-2 w-24 justify-center text-xs font-medium rounded-sm shadow-sm text-secondary-foreground bg-secondary">
           {name}
           <img src={imgSrc} className="w-4 h-4 rounded-md" alt={name} />{" "}
         </Menu.Button>

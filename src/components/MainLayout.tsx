@@ -1,6 +1,8 @@
+"use client";
+
 import Head from "next/head";
 
-import React from "react";
+import React, { useState } from "react";
 import NavBar from "./navbar/NavBar";
 import Sidebar from "./sidebar/Sidebar";
 import Footer from "./footer/Footer";
@@ -10,6 +12,12 @@ interface MainLayoutInterface {
 }
 
 const MainLayout: React.FC<MainLayoutInterface> = ({ children }) => {
+  const [isOpen, setIsOpen] = useState<boolean>(false);
+
+  const handleSidebarToggle = () => {
+    setIsOpen((prev) => !prev);
+  };
+
   return (
     <>
       <Head>
@@ -20,10 +28,18 @@ const MainLayout: React.FC<MainLayoutInterface> = ({ children }) => {
       </Head>
 
       <main className="relative flex min-h-screen font-medium bg-background text-foreground">
-        <Sidebar />
-        <div className="relative flex-1 w-full pb-5 overflow-auto pl-16">
-          <NavBar />
-          <div className="flex flex-col justify-between h-[90%] px-4">
+        <Sidebar isOpen={isOpen} toggleSidebar={handleSidebarToggle} />
+
+        {/* sidebar overlay */}
+        <div
+          className={`fixed inset-0 bg-black/40 z-20 ${
+            isOpen ? "visible" : "invisible"
+          }`}
+          onClick={handleSidebarToggle}></div>
+
+        <div className="relative flex-1 w-full pb-5 overflow-auto md:pl-16">
+          <NavBar toggleSidebar={handleSidebarToggle} />
+          <div className="md:pl-8 px-4">
             <div>{children}</div>
             <Footer />
           </div>

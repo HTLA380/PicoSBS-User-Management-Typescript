@@ -20,10 +20,8 @@
 }
 /* Track */
 .customize__scroll::-webkit-scrollbar-track {
-  background: #e9e8e8;
-  @apply rounded;
+  @apply bg-accent rounded;
 }
 .customize__scroll::-webkit-scrollbar-thumb {
-  background: #b7b7b7;
-  @apply rounded;
+  @apply bg-accent-foreground rounded;
 }

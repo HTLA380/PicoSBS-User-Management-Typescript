@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { SetStateAction, useState } from "react";
 import Link from "next/link";
 import { sidebarData } from "../../../constants/data";
 import { usePathname } from "next/navigation";
@@ -17,8 +17,12 @@ interface MenuItem {
   }[];
 }
 
-const Sidebar: React.FC = () => {
-  const [isOpen, setIsOpen] = useState<boolean>(false);
+interface SidebarInterface {
+  isOpen: boolean;
+  toggleSidebar: () => void;
+}
+
+const Sidebar: React.FC<SidebarInterface> = ({ isOpen, toggleSidebar }) => {
   const pathname = usePathname();
 
   const renderMenuItem = (menu: MenuItem, index: number) => (
@@ -29,7 +33,7 @@ const Sidebar: React.FC = () => {
             menu.menu_child ? "items-start" : "items-center "
           }`}>
           <button
-            onClick={() => setIsOpen((prev) => !prev)}
+            onClick={toggleSidebar}
             className={`hover:bg-primary-light p-2 rounded-lg ${
               menu.menu_path === pathname ? "bg-primary-light text-primary" : ""
             }`}>
@@ -89,8 +93,8 @@ const Sidebar: React.FC = () => {
 
   return (
     <div
-      className={`bg-secondary shadow-lg fixed top-0 bottom-0 left-0 px-2 pt-20 ${
-        isOpen ? "w-[17rem]" : "w-16"
+      className={`bg-secondary shadow-lg fixed top-0 bottom-0 px-2 pt-20 ${
+        isOpen ? "w-[17rem] left-0" : "w-16 -left-20 md:left-0"
       } duration-500 z-40`}>
       <div className="flex flex-col overflow-hidden">
         {sidebarData.map((menu: MenuItem, index: number) =>
@@ -98,7 +102,7 @@ const Sidebar: React.FC = () => {
         )}
       </div>
       <button
-        onClick={() => setIsOpen((prev) => !prev)}
+        onClick={toggleSidebar}
         className="absolute text-xs bottom-20 right-0 translate-x-1/2 text-primary-foreground bg-primary p-2 rounded-lg">
         {isOpen ? <FaArrowLeft /> : <FaArrowRight />}
       </button>

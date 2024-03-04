@@ -32,13 +32,14 @@ const useInformationInputData: useInformationInputDataInterface[] = [
     labelName: "Prefix",
     placeHolder: "Mr / Mrs / Miss",
     name: "prefix",
+    className: "col-span-full md:col-auto",
     inputType: "text",
   },
   {
     labelName: "First Name",
     placeHolder: "First Name",
     name: "firstName",
-    className: "col-span-2",
+    className: "col-span-3 md:col-span-2",
     inputType: "text",
   },
   {

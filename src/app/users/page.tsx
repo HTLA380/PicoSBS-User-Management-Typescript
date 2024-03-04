@@ -14,7 +14,7 @@ const Users = () => {
   return (
     <UserFilterProvider initialData={UsersListInfos}>
       <MainLayout>
-        <div className="py-5 mb-20 ml-4 text-sm rounded-lg bg-card">
+        <div className="py-5 mb-20 text-sm rounded-lg bg-card">
           <div className="mb-5">
             <TableFilter />
           </div>

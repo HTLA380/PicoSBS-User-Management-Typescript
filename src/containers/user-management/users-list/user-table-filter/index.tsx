@@ -26,7 +26,7 @@ const TableFilter = () => {
   };
 
   return (
-    <div className="flex flex-wrap items-center justify-between gap-4 px-8">
+    <div className="flex flex-wrap items-center gap-4 px-8">
       <Input
         leftIcon={BiSearch}
         placeholder={"Search User..."}
@@ -35,7 +35,7 @@ const TableFilter = () => {
         onChange={handleInputChange}
       />
 
-      <div className="flex items-center gap-4">
+      <div className="flex items-center gap-4 flex-wrap justify-end w-full">
         {/* render delete button if the users get select */}
         {selectedUsersId.length > 0 ? (
           <Delete />
@@ -45,7 +45,7 @@ const TableFilter = () => {
             <ExportModal />
             <Link
               href={"/users/create"}
-              className="flex items-center gap-2 px-6 py-3 text-sm rounded-md text-primary-foreground bg-primary hover:brightness-90">
+              className="flex items-center gap-2 px-6 py-3 text-xs md:text-sm rounded-md text-primary-foreground bg-primary hover:brightness-90">
               <FaPlus />
               Create User
             </Link>
