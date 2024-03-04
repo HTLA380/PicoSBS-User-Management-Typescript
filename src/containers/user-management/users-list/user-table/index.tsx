@@ -13,7 +13,7 @@ interface User {
   user: {
     name: string;
     email?: string;
-    imgSrc?: string;
+    imgUrl?: string;
   };
   username: string;
   role: string;
@@ -106,15 +106,15 @@ const CustomTable: React.FC = () => {
     <div className="flex items-center">
       <div
         className={`w-[50px] h-[50px] cursor-pointer ${
-          value.imgSrc
+          value.imgUrl
             ? "object-center"
             : `text-center flex items-center justify-center`
         } rounded-full overflow-hidden mr-4`}>
-        {value.imgSrc ? (
+        {value.imgUrl ? (
           <Image
-            src={value.imgSrc}
+            src={value.imgUrl}
             alt=""
-            className="w-full h-full"
+            className="w-full h-full object-center"
             width={100}
             height={100}
           />

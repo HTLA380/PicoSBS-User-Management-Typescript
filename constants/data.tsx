@@ -217,7 +217,7 @@ export const UsersListInfos: User[] = [
     id: 1,
     user: {
       name: "Htet Aung Lin",
-      imgUrl: "/images/htetaunglin.png",
+      imgUrl: "/assets/images/users/htetaunglin.png",
       email: "htetaunglin.coder@gmail.com",
     },
     username: "htla",
